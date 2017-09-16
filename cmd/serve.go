@@ -9,8 +9,10 @@ import (
 
 // serveCmd represents the serve command
 var serveCmd = &cobra.Command{
-	Use:   "serve",
-	Short: "Run the mudio web service",
+	Use:     "serve",
+	Aliases: []string{"server", "run"},
+	Short:   "Run the mudio web service",
+	Args:    cobra.NoArgs,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Serving on port: ", viper.GetInt("port"))
 	},
